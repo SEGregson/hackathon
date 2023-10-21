@@ -70,33 +70,25 @@
             <div class="text-muted"> Note: please include bills as well as rest/morgages</div>
         </div>
     
-        <div class="m-3">
+        <!-- <div class="m-3">
             <label for="savings" class="form-label"> Where are you based?</label>
             <div class="dropdown">
                 <button class="btn btn-white dropdown-toggle" type="button" id="location">
                     Location
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="Location">
-                  <li><a class="dropdown-item" href="#">London</a></li>
-                  <li><a class="dropdown-item" href="#">South England</a></li>
-                  <li><a class="dropdown-item" href="#">Midlands</a></li>
-                  <li><a class="dropdown-item" href="#">North England</a></li>
+                  <li><a class="dropdown-item" >London</a></li>
+                  <li><a class="dropdown-item" >South England</a></li>
+                  <li><a class="dropdown-item" >Midlands</a></li>
+                  <li><a class="dropdown-item" >North England</a></li>
                 </ul>
-              </div>
-              <button class="btn btn-primary" id="submit"> submit </button>
+              </div> -->
+              <a href="/output" class="btn btn-primary"> submit </a>
 
         </div>
-    </div>    
-
-    <div id="over">
-        <h1> You Are Overspending</h1>
-    </div>
-
-    <div id="under">
-        <h1> You Are Underspending</h1>
-    </div>
-    
+    </div>        
     <script>
+
         $("submit").click(function(){
             $.post("/api/main", {
                 "familyNum": $("familyNum").val(),
@@ -110,6 +102,8 @@
                 "location": $("location").val()
             });
         });
+
+
     </script>
 
 </body>

@@ -5,4 +5,6 @@ from django.urls import path
 urlpatterns = [
     path('index/', index, name='index'),
     path('getInfo/', getInfo, name='getInfo'),
+    path('output/', output, name='output'),
+    path('underspending/', underspending, name='underspending'),
 ]

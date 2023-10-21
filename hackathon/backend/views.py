@@ -31,6 +31,15 @@ def main(request):
 
 
     spending = None
-    if total_user_budget < total_budget
+    if total_user_budget < total_budget:
+        spending = "Under-Spending"
+    elif total_user_budget > total_budget:
+        spending = "Over-Spending"
+    elif total_user_budget == total_budget:
+        spending = "Balanced-Spending"
 
-    return Response(JSON)
+    return Response({"spending": spending, 
+            "GrocerySpendingDiff": JSON['grocery_budget']-grocery_Budget, 
+            "LeisureSpendingDiff": JSON['leisure_budget']-leisure_Budget, 
+            "TransportSpendingDiff": JSON['transport_budget']-transport_Budget,},
+            status=200)

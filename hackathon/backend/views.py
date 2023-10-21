@@ -41,5 +41,6 @@ def main(request):
     return Response({"spending": spending, 
             "GrocerySpendingDiff": JSON['grocery_budget']-grocery_Budget, 
             "LeisureSpendingDiff": JSON['leisure_budget']-leisure_Budget, 
-            "TransportSpendingDiff": JSON['transport_budget']-transport_Budget,},
+            "TransportSpendingDiff": JSON['transport_budget']-transport_Budget,
+            "AccomodationSpendingDiff": JSON['accomodation_budget']-accomodation_Budget},
             status=200)

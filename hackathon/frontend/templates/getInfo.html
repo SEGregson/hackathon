@@ -10,7 +10,7 @@
     Required information is shown with a *
     <hr>
 
-    <div class="my-1">
+    <div class="mx-1">
         <div class="m-3">
             <label for="familyNum" class="form-label">How many family members do you have?*</label>
             <input class="form-control" id="familyNum">
@@ -83,9 +83,35 @@
                   <li><a class="dropdown-item" href="#">North England</a></li>
                 </ul>
               </div>
+              <button class="btn btn-primary" id="submit"> submit </button>
+
         </div>
-    
     </div>    
+
+    <div id="over">
+        <h1> You Are Overspending</h1>
+    </div>
+
+    <div id="under">
+        <h1> You Are Underspending</h1>
+    </div>
     
+    <script>
+        $("submit").click(function(){
+            $.post("/api/main", {
+                "familyNum": $("familyNum").val(),
+                "dependentNum": $("dependentNum").val(),
+                "petNum": $("petNum").val(),
+                "savings": $("savings").val(),
+                "income": $("income").val(),
+                "transport": $("transport").val(),
+                "leasure": $("leasure").val(),
+                "housing": $("housing").val(),
+                "location": $("location").val()
+            }, function() {
+                window.location.replace("./");
+            });
+        });
+    </script>
 
 </body>

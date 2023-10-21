@@ -7,3 +7,4 @@ def index(request):
 
 def getInfo(request):
     return render(request, 'getInfo.html')
+

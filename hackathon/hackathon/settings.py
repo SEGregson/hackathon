@@ -56,7 +56,7 @@ ROOT_URLCONF = 'hackathon.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['hackathon/frontend/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

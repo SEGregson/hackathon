@@ -4,4 +4,5 @@
 
 
 ## Project Title  
-Family Friend
+**Family Friend**
+<img src='https://github.com/SEGregson/hackathon/blob/main/Picture1.png'>

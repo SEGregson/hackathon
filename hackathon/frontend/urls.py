@@ -4,4 +4,5 @@ from django.urls import path
 
 urlpatterns = [
     path('index/', index, name='index'),
+    path('getInfo/', getInfo, name='getInfo'),
 ]

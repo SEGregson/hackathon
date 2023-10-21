@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<head>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+
+    <h1> Please provide necerssary information </h1>
+    Required information is shown with a *
+    <hr>
+
+    <div class="mx-1">
+        <div class="m-3">
+            <label for="familyNum" class="form-label">How many family members do you have?*</label>
+            <input class="form-control" id="familyNum">
+        </div>
+    
+        <div class="m-3">
+            <label for="dependentNum" class="form-label">How many family members do you have? not including parents/gardians*</label>
+            <input class="form-control" id="dependentNum">
+        </div>
+    
+        <div class="m-3">
+            <label for="petNum" class="form-label">How many pets do you own?*</label>
+            <input class="form-control" id="petNum">
+        </div>
+    
+        <hr>
+        <h2>
+            Yearly inflow
+        </h2>
+        The next questions are regarding the Inflow and holding of money over the last year
+        <hr>
+        <div class="m-3">
+            <label for="savings" class="form-label"> what is your current savings?*</label>
+            <input class="form-control" id="savings">
+        </div>
+    
+        <div class="m-3">
+            <label for="income" class="form-label"> Yearly income:* </label>
+            <input class="form-control" id="income">
+        </div>
+    
+        <div class="m-3">
+            <label for="savings" class="form-label"> current savings:*</label>
+            <input class="form-control" id="savings">
+        </div>
+    
+        <hr>
+        <h2>
+            Monthly outflow
+        </h2>
+        The next questions are regarding the expenses of your money over the last month.
+        <hr>
+    
+        <div class="m-3">
+            <label for="transport" class="form-label"> How much do you spend on transport?*</label>
+            <input class="form-control" id="transport">
+        </div>
+    
+        <div class="m-3">
+            <label for="savings" class="form-label"> How much do you spend on leasure?* </label>
+            <input class="form-control" id="savings">
+        </div>
+    
+        <div class="m-3">
+            <label for="savings" class="form-label"> How much do you spend on housing?*</label>
+            <input class="form-control" id="savings">
+            <div class="text-muted"> Note: please include bills as well as rest/morgages</div>
+        </div>
+    
+        <div class="m-3">
+            <label for="savings" class="form-label"> Where are you based?</label>
+            <div class="dropdown">
+                <button class="btn btn-white dropdown-toggle" type="button" id="location">
+                    Location
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="Location">
+                  <li><a class="dropdown-item" href="#">London</a></li>
+                  <li><a class="dropdown-item" href="#">South England</a></li>
+                  <li><a class="dropdown-item" href="#">Midlands</a></li>
+                  <li><a class="dropdown-item" href="#">North England</a></li>
+                </ul>
+              </div>
+              <button class="btn btn-primary" id="submit"> submit </button>
+
+        </div>
+    </div>    
+
+    <div id="over">
+        <h1> You Are Overspending</h1>
+    </div>
+
+    <div id="under">
+        <h1> You Are Underspending</h1>
+    </div>
+    
+    <script>
+        $("submit").click(function(){
+            $.post("/api/main", {
+                "familyNum": $("familyNum").val(),
+                "dependentNum": $("dependentNum").val(),
+                "petNum": $("petNum").val(),
+                "savings": $("savings").val(),
+                "income": $("income").val(),
+                "transport": $("transport").val(),
+                "leasure": $("leasure").val(),
+                "housing": $("housing").val(),
+                "location": $("location").val()
+            });
+        });
+    </script>
+
+</body>

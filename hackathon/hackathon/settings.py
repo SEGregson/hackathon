@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'backend',
     'frontend'
 ]
 
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'hackathon.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': './frontend/templates',
+        'DIRS': ['hackathon/frontend/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
